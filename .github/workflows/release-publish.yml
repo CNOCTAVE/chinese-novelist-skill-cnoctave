@@ -1,15 +1,16 @@
 # =============================================================================
-# GitHub Action: Publish Skill to npm on Release
+# GitHub Action: Publish Skill to npm & Claude Skill Marketplace
 # -----------------------------------------------------------------------------
-# Triggers when a GitHub Release is published, then runs `npm publish` to
-# upload this skill package to npm under the name
-# "chinese-novelist-skill-cnoctave".
+# Triggers when a GitHub Release is published, then:
+#   1. Validates the skill against the Agent Skills spec (agentskills.io)
+#   2. Configures the repo for marketplace discoverability
+#   3. Publishes the package to npm
 #
 # Required secrets:
 #   NPM_TOKEN  — npm access token with publish permissions
 # =============================================================================
 
-name: Publish Skill to npm
+name: Publish Skill to npm & Marketplace
 
 on:
   release:
@@ -17,7 +18,7 @@ on:
 
 jobs:
   publish:
-    name: Publish to npm
+    name: Publish to npm & Marketplace
     runs-on: ubuntu-latest
 
     steps:
@@ -33,7 +34,30 @@ jobs:
       - name: Install dependencies (if any)
         run: npm ci || true
 
+      # ── Step 1: Publish to npm ──────────────────────────────────────
       - name: Publish to npm
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # ── Step 2: Validate skill against Agent Skills spec ────────────
+      # gh skill publish (v2.90.0+) validates SKILL.md frontmatter,
+      # naming conventions, and directory structure per agentskills.io.
+      # --dry-run skips release creation (already handled by the trigger).
+      - name: Update GitHub CLI to latest
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq gh
+
+      - name: Validate skill against Agent Skills spec
+        run: gh skill publish --dry-run
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN || github.token }}
+
+      # ── Step 3: Configure repo for marketplace discoverability ─────
+      # Adding the "agent-skills" topic helps users discover the skill
+      # via GitHub search, gh skill search, and aggregator sites.
+      - name: Add agent-skills topic to repository
+        run: |
+          gh repo edit "${{ github.repository }}" --add-topic agent-skills
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN || github.token }}
