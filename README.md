@@ -3,3 +3,6 @@
 <ol>
 <li></li>
 <ol>
+<h4>🚀 快速开始</h4>
+<div>安装skill：<code style="color: #eee">npx skills add chinese-novelist-skill-cnoctave</code></div>
+<div>输入指令：<code style="color: #eee">使用 chinese-novelist-skill-cnoctave 帮我写一部小说</code></div>

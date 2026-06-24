@@ -8,7 +8,7 @@ metadata:
   source: 基于小说创作最佳实践设计
 ---
 
-# Chinese Novelist: 中文小说创作助手
+# chinese-novelist-skill-cnoctave: 中文小说创作助手
 
 ## 三大黄金法则
 
