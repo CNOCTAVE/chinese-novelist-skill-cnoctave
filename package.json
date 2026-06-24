@@ -1,0 +1,29 @@
+{
+  "name": "chinese-novelist-skill-cnoctave",
+  "version": "1.0.0",
+  "description": "原skill长期无人修复issue，Octave中文网凭借实际的AI网文写作经验不断完善此skill，更有配套ai写作课程销售，帮助开发者们在做中学",
+  "keywords": [
+    "agent-skill",
+    "chinese-novelist",
+    "chinese-novelist-skill-cnoctave",
+    "chinese",
+    "novel",
+    "writing"
+  ],
+  "license": "MIT",
+  "author": "",
+  "files": [
+    "SKILL.md",
+    "README.md",
+    "references/",
+    "scripts/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CNOCTAVE/chinese-novelist-skill-cnoctave.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CNOCTAVE/chinese-novelist-skill-cnoctave/issues"
+  },
+  "homepage": "https://github.com/CNOCTAVE/chinese-novelist-skill-cnoctave#readme"
+}
