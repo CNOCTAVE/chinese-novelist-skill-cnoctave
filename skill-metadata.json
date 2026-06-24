@@ -1,6 +1,6 @@
 {
   "name": "chinese-novelist-skill-cnoctave",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "原skill长期无人修复issue，Octave中文网凭借实际的AI网文写作经验不断完善此skill，更有配套ai写作课程销售，帮助开发者们在做中学",
 
   "flows": {
