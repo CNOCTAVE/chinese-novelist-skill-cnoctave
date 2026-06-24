@@ -1,0 +1,35 @@
+# =============================================================================
+# GitHub Action: Publish Skill to npm on Release
+# -----------------------------------------------------------------------------
+# Triggers when a GitHub Release is published, then uploads this skill to npm
+# under the name "chinese-novelist-skill-cnoctave" using `npx skill publish`.
+#
+# Required secrets:
+#   NPM_TOKEN  — npm access token with publish permissions
+# =============================================================================
+
+name: Publish Skill to npm
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+
+      - name: Publish skill to npm
+        run: npx -y skill publish --name chinese-novelist-skill-cnoctave
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
