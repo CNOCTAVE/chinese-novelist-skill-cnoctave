@@ -13,10 +13,9 @@
   "license": "MIT",
   "author": "",
   "files": [
-    "SKILL.md",
+    "skills/",
     "README.md",
-    "references/",
-    "scripts/"
+    "skill-metadata.json"
   ],
   "repository": {
     "type": "git",

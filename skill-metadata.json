@@ -8,49 +8,49 @@
       {
         "id": "phase0-initialization",
         "name": "初始化与偏好加载",
-        "file": "references/flows/phase0-initialization.md",
+        "file": "skills/chinese-novelist-skill-cnoctave/references/flows/phase0-initialization.md",
         "description": "读取用户偏好，检测未完成项目（中断续写），展示个性化欢迎。每次触发SKILL时首先执行。",
         "trigger": "自动（每次skill触发时首先执行）"
       },
       {
         "id": "phase1-layer1-core",
         "name": "核心定位（必答3问）",
-        "file": "references/flows/phase1-layer1-core.md",
+        "file": "skills/chinese-novelist-skill-cnoctave/references/flows/phase1-layer1-core.md",
         "description": "确定小说基本骨架：题材创意、主角设定、核心冲突。三个问题均为必答项，提供热门选项+自由输入。",
         "trigger": "初始化完成后自动进入"
       },
       {
         "id": "phase1-layer2-customize",
         "name": "深度定制与创作规格",
-        "file": "references/flows/phase1-layer2-customize.md",
+        "file": "skills/chinese-novelist-skill-cnoctave/references/flows/phase1-layer2-customize.md",
         "description": "世界观/背景设定、视角与基调、核心主题与读者定位、章节数量与篇幅规格。支持随机生成和跳过加速。",
         "trigger": "Layer 1 完成后自动进入"
       },
       {
         "id": "phase1-layer3-title",
         "name": "标题生成",
-        "file": "references/flows/phase1-layer3-title.md",
+        "file": "skills/chinese-novelist-skill-cnoctave/references/flows/phase1-layer3-title.md",
         "description": "AI 基于已收集的创意元素生成候选标题，用户选择或自定义后进入 Phase 2。",
         "trigger": "Layer 2 完成后自动进入"
       },
       {
         "id": "phase2-planning",
         "name": "规划 + 二次确认",
-        "file": "references/flows/phase2-planning.md",
+        "file": "skills/chinese-novelist-skill-cnoctave/references/flows/phase2-planning.md",
         "description": "创建项目文件夹，生成人物档案（00-人物档案.md）、大纲（01-大纲.md）和写作计划JSON（02-写作计划.json），等待用户确认后进入创作。",
         "trigger": "标题确认后自动进入"
       },
       {
         "id": "phase3-writing",
         "name": "疯狂创作",
-        "file": "references/flows/phase3-writing.md",
+        "file": "skills/chinese-novelist-skill-cnoctave/references/flows/phase3-writing.md",
         "description": "根据用户选择的写作模式（串行/并行/Teams）逐章执行创作。全程无需再次向用户确认，严格按大纲创作。支持中断续写。每章3000-5000字。",
         "trigger": "用户确认规划后自动进入"
       },
       {
         "id": "phase4-validation",
         "name": "自动校验与修复",
-        "file": "references/flows/phase4-validation.md",
+        "file": "skills/chinese-novelist-skill-cnoctave/references/flows/phase4-validation.md",
         "description": "全程无需用户介入，自动检查所有章节完成度和字数，不合格章节自动重写（最多3轮）。",
         "trigger": "创作完成后自动进入"
       }
@@ -60,14 +60,14 @@
       {
         "id": "phase5-conflict-enhancement",
         "name": "故事矛盾增强",
-        "file": "references/flows/phase5-woman-gushimaodun.md",
+        "file": "skills/chinese-novelist-skill-cnoctave/references/flows/phase5-woman-gushimaodun.md",
         "description": "增强故事矛盾冲突，提供内在矛盾与外在矛盾构建方法、实操技巧和避坑案例。多用于女频创作，但适用于所有题材。",
         "trigger": "自动校验与修复完成后自动进入"
       },
       {
         "id": "phase6-immersion-enhancement",
         "name": "故事代入感增强",
-        "file": "references/flows/phase6-man-gushidairugan.md",
+        "file": "skills/chinese-novelist-skill-cnoctave/references/flows/phase6-man-gushidairugan.md",
         "description": "增强故事代入感：感官描写、情绪锚点、心理活动、视角锁定、细节烘托五大维度优化。多用于男频创作，但适用于所有题材。如果在自动化工具中运行此skill，则跳过此阶段。",
         "trigger": "故事矛盾增强完成后自动进入"
       }
@@ -77,26 +77,26 @@
   "shared_infrastructure": [
     {
       "id": "shared-infrastructure",
-      "file": "references/flows/shared-infrastructure.md",
+      "file": "skills/chinese-novelist-skill-cnoctave/references/flows/shared-infrastructure.md",
       "description": "跨阶段共享机制：三大黄金法则、用户偏好系统、写作计划系统、字数检查脚本等"
     }
   ],
 
   "guides": [
-    { "name": "章节写作指南", "file": "references/guides/chapter-guide.md" },
-    { "name": "章节模板", "file": "references/guides/chapter-template.md" },
-    { "name": "人物构建指南", "file": "references/guides/character-building.md" },
-    { "name": "人物模板", "file": "references/guides/character-template.md" },
-    { "name": "内容扩展指南", "file": "references/guides/content-expansion.md" },
-    { "name": "对话写作指南", "file": "references/guides/dialogue-writing.md" },
-    { "name": "悬念钩子技巧", "file": "references/guides/hook-techniques.md" },
-    { "name": "大纲模板", "file": "references/guides/outline-template.md" },
-    { "name": "情节结构指南", "file": "references/guides/plot-structures.md" },
-    { "name": "标题生成指南", "file": "references/guides/title-guide.md" }
+    { "name": "章节写作指南", "file": "skills/chinese-novelist-skill-cnoctave/references/guides/chapter-guide.md" },
+    { "name": "章节模板", "file": "skills/chinese-novelist-skill-cnoctave/references/guides/chapter-template.md" },
+    { "name": "人物构建指南", "file": "skills/chinese-novelist-skill-cnoctave/references/guides/character-building.md" },
+    { "name": "人物模板", "file": "skills/chinese-novelist-skill-cnoctave/references/guides/character-template.md" },
+    { "name": "内容扩展指南", "file": "skills/chinese-novelist-skill-cnoctave/references/guides/content-expansion.md" },
+    { "name": "对话写作指南", "file": "skills/chinese-novelist-skill-cnoctave/references/guides/dialogue-writing.md" },
+    { "name": "悬念钩子技巧", "file": "skills/chinese-novelist-skill-cnoctave/references/guides/hook-techniques.md" },
+    { "name": "大纲模板", "file": "skills/chinese-novelist-skill-cnoctave/references/guides/outline-template.md" },
+    { "name": "情节结构指南", "file": "skills/chinese-novelist-skill-cnoctave/references/guides/plot-structures.md" },
+    { "name": "标题生成指南", "file": "skills/chinese-novelist-skill-cnoctave/references/guides/title-guide.md" }
   ],
 
   "scripts": [
-    { "name": "字数检查", "file": "scripts/check_chapter_wordcount.py" }
+    { "name": "字数检查", "file": "skills/chinese-novelist-skill-cnoctave/scripts/check_chapter_wordcount.py" }
   ],
 
   "pipeline_order": [

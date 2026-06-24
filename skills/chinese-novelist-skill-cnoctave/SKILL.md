@@ -6,6 +6,7 @@ description: |
 metadata:
   trigger: 创作中文小说、分章节故事、长篇小说创作
   source: 基于小说创作最佳实践设计
+license: MIT
 ---
 
 # chinese-novelist-skill-cnoctave: 中文小说创作助手
