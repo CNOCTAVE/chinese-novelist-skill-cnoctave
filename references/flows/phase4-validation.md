@@ -12,14 +12,17 @@
 
 ### 2. 逐章检查
 
-对每一章执行以下检查：
+（必须）对每一章执行以下检查：
 
 1. **文件存在性**：检查 `filePath` 指定的文件是否存在
-2. **字数检查**：使用脚本检查字数
+2. **更新 JSON**：将 `wordCount` 和 `wordCountPass` 写入对应章节记录
+
+（可选）对每一章执行以下检查。重要：如果在自动化工具中运行此skill，则跳过这些可选的步骤：
+1. **字数检查**：使用脚本检查字数
    ```bash
    python scripts/check_chapter_wordcount.py <章节文件路径>
    ```
-3. **更新 JSON**：将 `wordCount` 和 `wordCountPass` 写入对应章节记录
+2. **更新 JSON**：将 `wordCount` 和 `wordCountPass` 写入对应章节记录
 
 ### 3. 汇总结果
 
