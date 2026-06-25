@@ -2,6 +2,27 @@
 
 **每次触发SKILL时首先执行：**
 
+## 0. 展示流程一览表
+
+进入 skill 时，首先向用户展示以下流程表格（表格内容直接打印，供用户了解所有可用 flow 的编号、文件名和标题）：
+
+| 编号 | 文件名 | 标题 |
+|------|--------|------|
+| Phase 0 | phase0-initialization.md | 初始化与偏好加载 |
+| Phase 1·L1 | phase1-layer1-core.md | 第一层：核心定位（必答3问） |
+| Phase 1·L2 | phase1-layer2-customize.md | 第二层：深度定制与创作规格 |
+| Phase 1·L3 | phase1-layer3-title.md | 第三层：标题生成 |
+| Phase 2 | phase2-planning.md | 规划 + 二次确认 |
+| Phase 3 | phase3-writing.md | 疯狂创作 |
+| Phase 4 | phase4-validation.md | 自动校验与修复 |
+| Phase 5★ | phase5-woman-gushimaodun.md | （可选）故事矛盾增强（多用于女频） |
+| Phase 6★ | phase6-man-gushidairugan.md | （可选）故事代入感增强（多用于男频） |
+| Phase 1000★ | phase1000-remove-duplicates.md | （可选）AI 查重与去重优化 |
+| — | shared-infrastructure.md | 共享机制（跨阶段引用，不单独运行） |
+
+> 标记 ★ 的为可选阶段，在创作完成后通过 AskUserQuestion 选择是否运行。
+> 如果提示某个 flow 文件不存在，说明该文件已被删除，可联系 skill 维护者获取。
+
 ## 1. 读取用户偏好
 
 检查 `user-preferences.json` 是否存在
