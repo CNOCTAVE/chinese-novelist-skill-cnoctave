@@ -72,11 +72,12 @@ license: MIT
 [D] 都不需要，直接结束
 [E] AI 去重优化 → 运行第1000阶段（查重+降重，消除跨章节重复内容）
 [F] 提升故事综合质量（女频优化方向） → 运行第7阶段
+[G] 叙述手法升级（女频优化方向） → 运行第8阶段（解决叙事平淡问题）
 [M] 全部男频可选流程 → 运行第6阶段 + 第1000阶段
-[W] 全部女频可选流程 → 运行第5阶段 + 第7阶段 + 第1000阶段
-[FM] 女频全面增强 → 运行第5阶段 + 第7阶段（故事矛盾+综合质量提升）
+[W] 全部女频可选流程 → 运行第5阶段 + 第7阶段 + 第8阶段 + 第1000阶段
+[FM] 女频全面增强 → 运行第5阶段 + 第7阶段 + 第8阶段（故事矛盾+综合质量+叙述手法）
 
-→ 根据用户选择进入 [phase5-woman-gushimaodun.md](references/flows/phase5-woman-gushimaodun.md) 和/或 [phase6-man-gushidairugan.md](references/flows/phase6-man-gushidairugan.md) 和/或 [phase1000-remove-duplicates.md](references/flows/phase1000-remove-duplicates.md) 和/或 [phase7-improve-the-overall-quality-of-the-story.md](references/flows/phase7-improve-the-overall-quality-of-the-story.md)
+→ 根据用户选择进入 [phase5-woman-gushimaodun.md](references/flows/phase5-woman-gushimaodun.md) 和/或 [phase6-man-gushidairugan.md](references/flows/phase6-man-gushidairugan.md) 和/或 [phase1000-remove-duplicates.md](references/flows/phase1000-remove-duplicates.md) 和/或 [phase7-improve-the-overall-quality-of-the-story.md](references/flows/phase7-improve-the-overall-quality-of-the-story.md) 和/或 [phase8-improve-narrative-tension.md](references/flows/phase8-improve-narrative-tension.md)
 
 ## 共享机制
 
