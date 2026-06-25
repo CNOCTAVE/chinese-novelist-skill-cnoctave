@@ -10,6 +10,7 @@ https://www.bilibili.com/cheese/play/ep2653374</li>
 <ol>
 <h4>🚀 快速开始</h4>
 <div>安装skill：<code style="color: #eee">npx skills add CNOCTAVE/chinese-novelist-skill-cnoctave</code></div>
-<div>在agent中安装skill（GitHub）：<code style="color: #eee">帮我安装skill，命令为：npx skills add CNOCTAVE/chinese-novelist-skill-cnoctave</code></div>
+<div>在agent中安装skill（一般安装）：<code style="color: #eee">帮我安装skill，命令为：npx skills add CNOCTAVE/chinese-novelist-skill-cnoctave</code></div>
 <div>在agent中安装skill（npm）：<code style="color: #eee">帮我安装skill，命令为：npx skills add npm:chinese-novelist-skill-cnoctave</code></div>
+<div>在agent中安装skill（GitHub CLI）：<code style="color: #eee">帮我安装skill，命令为：gh skill install CNOCTAVE/chinese-novelist-skill-cnoctave</code></div>
 <div>输入指令：<code style="color: #eee">使用 chinese-novelist-skill-cnoctave 帮我写一部小说</code></div>
