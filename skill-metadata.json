@@ -37,7 +37,7 @@
         "id": "phase2-planning",
         "name": "规划 + 二次确认",
         "file": "skills/chinese-novelist-skill-cnoctave/references/flows/phase2-planning.md",
-        "description": "创建项目文件夹，生成人物档案（00-人物档案.md）、大纲（01-大纲.md）和写作计划JSON（02-写作计划.json），等待用户确认后进入创作。",
+        "description": "创建项目文件夹，生成人物档案（00-人物档案.json）、大纲（01-大纲.json）和写作计划JSON（02-写作计划.json），等待用户确认后进入创作。",
         "trigger": "标题确认后自动进入"
       },
       {
