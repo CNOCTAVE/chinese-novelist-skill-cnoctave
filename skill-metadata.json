@@ -1,6 +1,6 @@
 {
   "name": "chinese-novelist-skill-cnoctave",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "原skill长期无人修复issue，Octave中文网凭借实际的AI网文写作经验不断完善此skill，更有配套ai写作课程销售，帮助开发者们在做中学",
 
   "flows": {
@@ -62,14 +62,21 @@
         "name": "故事矛盾增强",
         "file": "skills/chinese-novelist-skill-cnoctave/references/flows/phase5-woman-gushimaodun.md",
         "description": "增强故事矛盾冲突，提供内在矛盾与外在矛盾构建方法、实操技巧和避坑案例。多用于女频创作，但适用于所有题材。",
-        "trigger": "自动校验与修复完成后自动进入"
+        "trigger": "用户通过 AskUserQuestion 选择后运行"
       },
       {
         "id": "phase6-immersion-enhancement",
         "name": "故事代入感增强",
         "file": "skills/chinese-novelist-skill-cnoctave/references/flows/phase6-man-gushidairugan.md",
-        "description": "增强故事代入感：感官描写、情绪锚点、心理活动、视角锁定、细节烘托五大维度优化。多用于男频创作，但适用于所有题材。如果在自动化工具中运行此skill，则跳过此阶段。",
-        "trigger": "故事矛盾增强完成后自动进入"
+        "description": "增强故事代入感：感官描写、情绪锚点、心理活动、视角锁定、细节烘托五大维度优化。多用于男频创作，但适用于所有题材。",
+        "trigger": "用户通过 AskUserQuestion 选择后运行"
+      },
+      {
+        "id": "phase1000-dedup",
+        "name": "AI 查重与去重优化",
+        "file": "skills/chinese-novelist-skill-cnoctave/references/flows/phase1000-remove-duplicates.md",
+        "description": "检测并消除跨章节重复内容：滑动窗口查重、跨章节语义查重、高频句式检测，支持删除/改写/结构重组三级去重策略。",
+        "trigger": "用户通过 AskUserQuestion 选择后运行"
       }
     ]
   },

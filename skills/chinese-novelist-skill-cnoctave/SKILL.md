@@ -70,8 +70,9 @@ license: MIT
 [B] 增强故事代入感（男频优化方向） → 运行第6阶段
 [C] 两个都运行 → 先运行第5阶段，再运行第6阶段
 [D] 都不需要，直接结束
+[E] AI 去重优化 → 运行第1000阶段（查重+降重，消除跨章节重复内容）
 
-→ 根据用户选择进入 [phase5-woman-gushimaodun.md](references/flows/phase5-woman-gushimaodun.md) 和/或 [phase6-man-gushidairugan.md](references/flows/phase6-man-gushidairugan.md)
+→ 根据用户选择进入 [phase5-woman-gushimaodun.md](references/flows/phase5-woman-gushimaodun.md) 和/或 [phase6-man-gushidairugan.md](references/flows/phase6-man-gushidairugan.md) 和/或 [phase1000-remove-duplicates.md](references/flows/phase1000-remove-duplicates.md)
 
 ## 共享机制
 
