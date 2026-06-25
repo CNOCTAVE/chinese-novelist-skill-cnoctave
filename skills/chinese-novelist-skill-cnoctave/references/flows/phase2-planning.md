@@ -41,15 +41,12 @@
 
 **2. 写作模式选择**（用户确认规划后）
 
-使用 `AskUserQuestion` 询问：
+使用 AskUserQuestion 询问：
 
-```
 Question: 选择写作模式
-Options:
-- 逐章串行（主 Agent 自己逐章写，全程无中断，适合短中篇）
-- 子Agent并行（分批派生子 Agent 并行写作，大纲驱动连贯性，适合中长篇）
-- Agent Teams（Claude Code 多 Agent 协作模式，Agent 间可通讯，需手动开启）
-```
+[A] 逐章串行（主 Agent 自己逐章写，全程无中断，适合短中篇）
+[B] 子Agent并行（分批派生子 Agent 并行写作，大纲驱动连贯性，适合中长篇）
+[C] Agent Teams（Claude Code 多 Agent 协作模式，Agent 间可通讯，需手动开启）
 
 用户选择后：
 - 更新 `02-写作计划.json` 的 `writingMode` 字段

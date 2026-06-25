@@ -45,10 +45,11 @@ license: MIT
 
 ### 第2.5步：写作模式选择
 
-规划确认后，选择写作模式：
-- **逐章串行**（`serial`）：主 Agent 自己逐章写，全程无中断
-- **子Agent并行**（`subagent-parallel`）：将章节分成批次，派生子 Agent 并行写作
-- **Agent Teams**（`agent-teams`）：Claude Code 多 Agent 协作模式，Agent 间可通讯（需手动开启）
+规划确认后，使用 AskUserQuestion 工具让用户选择写作模式：
+
+[A] 逐章串行（serial）：主 Agent 自己逐章写，全程无中断，适合短中篇
+[B] 子Agent并行（subagent-parallel）：将章节分成批次，派生子 Agent 并行写作，大纲驱动连贯性，适合中长篇
+[C] Agent Teams（agent-teams）：Claude Code 多 Agent 协作模式，Agent 间可通讯（需手动开启）
 
 → 详见 [phase3-writing.md](references/flows/phase3-writing.md)
 
@@ -60,6 +61,17 @@ license: MIT
 ### 第四阶段：自动校验与修复（无需用户确认）
 
 全程无需用户介入，自动检查所有章节完成度和字数，不合格章节自动重写（最多3轮）。 → 详见 [phase4-validation.md](references/flows/phase4-validation.md)
+
+### 第4.5步：可选增强阶段
+
+校验通过后，使用 AskUserQuestion 工具让用户选择是否运行可选增强阶段：
+
+[A] 强化故事矛盾（女频优化方向） → 运行第5阶段
+[B] 增强故事代入感（男频优化方向） → 运行第6阶段
+[C] 两个都运行 → 先运行第5阶段，再运行第6阶段
+[D] 都不需要，直接结束
+
+→ 根据用户选择进入 [phase5-woman-gushimaodun.md](references/flows/phase5-woman-gushimaodun.md) 和/或 [phase6-man-gushidairugan.md](references/flows/phase6-man-gushidairugan.md)
 
 ## 共享机制
 
