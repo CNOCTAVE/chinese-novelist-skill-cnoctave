@@ -20,6 +20,7 @@ license: MIT
 ## 特性说明
 
 - **中断续写**：自动检测未完成项目，从断点继续创作
+- **大纲可编辑后继续**：写完大纲与人物设定后可暂停，输出文件路径供用户修改；后续对话输入「继续写作」等字样即按修改后的设定续写
 - **自动校验**：创作完成后自动检查字数和质量，不合格自动修复
 - **逐章写作**（可选）：支持子Agent/Teams 逐章写作（一次只处理一章），通过 `02-写作计划.json` 协调状态
 
@@ -29,7 +30,7 @@ license: MIT
 
 ### 第0步：初始化与偏好加载
 
-读取用户偏好，检测未完成项目（中断续写），展示个性化欢迎。 → 详见 [phase0-initialization.md](references/flows/phase0-initialization.md)
+读取用户偏好，检测未完成项目（中断续写），并检测「继续写作」等字样以恢复用户修改过大纲/人物设定后的项目，展示个性化欢迎。 → 详见 [phase0-initialization.md](references/flows/phase0-initialization.md)
 
 ### 第一阶段：三层递进式问答
 
@@ -41,7 +42,7 @@ license: MIT
 
 ### 第二阶段：规划 + 二次确认
 
-创建项目文件夹（`./chinese-novelist/{timestamp}-{小说名称}/`），生成大纲、人物档案和写作计划JSON，等待用户确认。 → 详见 [phase2-planning.md](references/flows/phase2-planning.md)
+创建项目文件夹（`./chinese-novelist/{timestamp}-{小说名称}/`），生成大纲、人物档案和写作计划JSON，等待用户确认。确认后用户可选择**立即开始写作**或**暂停并修改**：选择暂停时，skill 输出人物设定文件（`00-人物档案.json`）与大纲文件（`01-大纲.json`）的完整路径并停止，供用户修改。 → 详见 [phase2-planning.md](references/flows/phase2-planning.md)
 
 ### 第2.5步：写作模式选择
 
