@@ -21,7 +21,7 @@ license: MIT
 
 - **中断续写**：自动检测未完成项目，从断点继续创作
 - **自动校验**：创作完成后自动检查字数和质量，不合格自动修复
-- **并行写作**（可选）：支持子Agent并行写作，通过 `02-写作计划.json` 协调状态
+- **逐章写作**（可选）：支持子Agent/Teams 逐章写作（一次只处理一章），通过 `02-写作计划.json` 协调状态
 
 ## 核心流程
 
@@ -47,20 +47,22 @@ license: MIT
 
 规划确认后，使用 AskUserQuestion 工具让用户选择写作模式：
 
-[A] 逐章串行（serial）：主 Agent 自己逐章写，全程无中断，适合短中篇
-[B] 子Agent并行（subagent-parallel）：将章节分成批次，派生子 Agent 并行写作，大纲驱动连贯性，适合中长篇
-[C] Agent Teams（agent-teams）：Claude Code 多 Agent 协作模式，Agent 间可通讯（需手动开启）
+[A] 逐章串行（serial）：主 Agent 自己逐章写，写完一章立即校验再写下一章，全程无中断，适合短中篇
+[B] 子Agent逐章（subagent-parallel）：主 Agent 逐章派生子 Agent，每个子 Agent 只写当前这一章，写完即校验，适合中长篇
+[C] Agent Teams（agent-teams）：Claude Code 多 Agent 协作模式，每章一个任务、一次认领一章，Agent 间可通讯（需手动开启）
+
+> 三种模式均遵循【逐章执行】原则：无论哪种模式，都一次只处理一章，当前章写完并校验通过后才进入下一章。
 
 → 详见 [phase3-writing.md](references/flows/phase3-writing.md)
 
 ### 第三阶段：疯狂创作（无需用户确认）
 > 切记，一旦进入这个阶段，所有过程都禁止向用户确认。用户就是你的读者，你必须把完整的小说创作完成才能与用户报告
 
-根据用户选择的写作模式（串行/并行/Teams）逐章执行创作流程。每章创作前必须读取 `01-大纲.json` 中对应章节的规划信息，严格按大纲创作。支持中断续写。 → 详见 [phase3-writing.md](references/flows/phase3-writing.md)
+根据用户选择的写作模式（串行/子Agent/Teams）逐章执行创作流程，一次只创作一章：写完当前章后立即进入第四阶段校验该章，通过后再创作下一章。每章创作前必须读取 `01-大纲.json` 中对应章节的规划信息，严格按大纲创作。支持中断续写。 → 详见 [phase3-writing.md](references/flows/phase3-writing.md)
 
 ### 第四阶段：自动校验与修复（无需用户确认）
 
-全程无需用户介入，自动检查所有章节完成度和字数，不合格章节自动重写（最多3轮）。 → 详见 [phase4-validation.md](references/flows/phase4-validation.md)
+全程无需用户介入，逐章校验每一章的字数与完成度，不合格章节当场重写修复（最多3轮）。 → 详见 [phase4-validation.md](references/flows/phase4-validation.md)
 
 ### 第4.5步：可选增强阶段
 

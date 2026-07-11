@@ -128,6 +128,6 @@ python scripts/check_chapter_wordcount.py ./chinese-novelist/项目文件夹/第
 | 阶段 | 用途 |
 |------|------|
 | Phase 3（逐章创作） | 撰写后检查单章字数，低于3000字必须扩充 |
-| Phase 4（自动校验） | 批量检查所有章节字数，不合格章节自动重写 |
+| Phase 4（自动校验） | 逐章检查每章字数，不合格章节当场重写修复（最多3轮） |
 
 低于3000字的章节必须使用 [content-expansion.md](../guides/content-expansion.md) 的扩充技巧进行扩充。
