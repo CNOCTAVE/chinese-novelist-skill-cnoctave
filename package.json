@@ -13,10 +13,7 @@
   "license": "MIT",
   "author": "",
   "files": [
-    "SKILL.md",
-    "scripts/",
-    "references/",
-    "assets/",
+    "skills/",
     "README.md"
   ],
   "repository": {
