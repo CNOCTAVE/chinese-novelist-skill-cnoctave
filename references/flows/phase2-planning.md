@@ -14,7 +14,7 @@
      "novelName": "[小说名称]",
      "projectPath": "./chinese-novelist/{timestamp}-[小说名称]",
      "totalChapters": [章节数],
-     "minWordsPerChapter": 3000,
+     "minWordsPerChapter": 2000,
      "createdAt": "[ISO时间]",
      "updatedAt": "[ISO时间]",
      "status": "planning",

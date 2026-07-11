@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 章节字数检查脚本
-检查指定章节文件的字数，低于3000字时提示需要扩充
+检查指定章节文件的字数，低于2000字时提示需要扩充
 """
 
 import os
@@ -52,7 +52,7 @@ def extract_content_from_chapter(file_path: Path) -> str:
     return main_content
 
 
-def check_chapter(file_path: str, min_words: int = 3000) -> dict:
+def check_chapter(file_path: str, min_words: int = 2000) -> dict:
     """检查单个章节的字数"""
     path = Path(file_path)
 
@@ -82,7 +82,7 @@ def check_chapter(file_path: str, min_words: int = 3000) -> dict:
     }
 
 
-def check_all_chapters(directory: str, pattern: str = '第*.md', min_words: int = 3000) -> list:
+def check_all_chapters(directory: str, pattern: str = '第*.md', min_words: int = 2000) -> list:
     """检查目录下所有符合模式的章节文件"""
     dir_path = Path(directory)
     if not dir_path.exists():
@@ -99,7 +99,7 @@ def check_all_chapters(directory: str, pattern: str = '第*.md', min_words: int 
     return results
 
 
-def print_results(results: list, min_words: int = 3000):
+def print_results(results: list, min_words: int = 2000):
     """打印检查结果"""
     if not results:
         print('没有找到章节文件')
@@ -145,7 +145,7 @@ def print_results(results: list, min_words: int = 3000):
 
 def main():
     """主函数"""
-    min_words = 3000
+    min_words = 2000
 
     if len(sys.argv) < 2:
         print('用法:')
@@ -164,12 +164,12 @@ def main():
             print('错误: 使用 --all 时需要指定目录路径')
             return
         directory = sys.argv[2]
-        min_words = int(sys.argv[3]) if len(sys.argv) > 3 else 3000
+        min_words = int(sys.argv[3]) if len(sys.argv) > 3 else 2000
         results = check_all_chapters(directory, min_words=min_words)
         print_results(results, min_words)
     else:
         file_path = sys.argv[1]
-        min_words = int(sys.argv[2]) if len(sys.argv) > 2 else 3000
+        min_words = int(sys.argv[2]) if len(sys.argv) > 2 else 2000
         result = check_chapter(file_path, min_words)
         print_results([result], min_words)
 
