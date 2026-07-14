@@ -17,9 +17,10 @@
      "minWordsPerChapter": 2000,
      "createdAt": "[ISO时间]",
      "updatedAt": "[ISO时间]",
-     "status": "planning",
-     "writingMode": "[serial|subagent-parallel|agent-teams]",
-     "chapters": [
+    "status": "planning",
+    "writingMode": "[serial|subagent-parallel|agent-teams]",
+    "parallelBatchSize": 5,
+    "chapters": [
        {
          "chapterNumber": 1,
          "title": "[章节标题]",
@@ -60,13 +61,14 @@ Question: 大纲与人物设定已生成。现在就开始写作吗？
 使用 AskUserQuestion 询问：
 
 Question: 选择写作模式
-[A] 逐章串行（主 Agent 自己逐章写，写完一章立即校验再写下一章，全程无中断，适合短中篇）
-[B] 子Agent逐章（主 Agent 逐章派生子 Agent，每个子 Agent 只写当前这一章，写完即校验，适合中长篇）
-[C] Agent Teams（Claude Code 多 Agent 协作模式，每章一个任务、一次认领一章，Agent 间可通讯，需手动开启）
+[A] 主Agent串行（主 Agent 自己逐章写，写完一章立即校验再写下一章，全程无中断，仅作无子Agent环境或短篇的轻量回退）
+[B] 子Agent并行（推荐，主 Agent 按批次并发派生子 Agent，同一批次多章同时写作，本批完成校验后再写下一批，适合中长篇）
+[C] Agent Teams（Claude Code 多 Agent 协作模式，多名成员同时认领不同章节并发创作，Agent 间可通讯，需手动开启）
 
-> 三种模式均遵循【逐章执行】原则：无论哪种模式，都一次只处理一章，当前章写完并校验通过后才进入下一章。
+> 模式 [B]/[C] 采用【批次并发】原则：在一条消息中一次性派发本批所有章节的子 Agent，多章同时创作；并行安全由大纲前置规划（每章规划已在 Phase 2 完整写好）+ 每章独立状态文件（并发写作期间不修改共享 JSON）保证。模式 [A] 为单 Agent 无法并行的轻量回退。
 
 用户选择后：
 - 更新 `02-写作计划.json` 的 `writingMode` 字段
+- 若为并行模式 [B]/[C]，设定 `parallelBatchSize`（默认 5；可设为某个整数或 `"all"` 一次性并发全部章节）
 - 更新 `status` 为 `"in_progress"`
 - 进入第三阶段：疯狂创作 → 详见 [phase3-writing.md](phase3-writing.md)

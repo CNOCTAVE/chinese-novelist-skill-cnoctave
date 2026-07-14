@@ -17,6 +17,7 @@
 | Phase 4 | phase4-validation.md | 自动校验与修复 |
 | Phase 5★ | phase5-woman-gushimaodun.md | （可选）故事矛盾增强（多用于女频） |
 | Phase 6★ | phase6-man-gushidairugan.md | （可选）故事代入感增强（多用于男频） |
+| Phase 10★ | phase10-man-conflict-resolution.md | （可选）人物设定/情节走向与上文冲突优化（多用于男频） |
 | Phase 1000★ | phase1000-remove-duplicates.md | （可选）AI 查重与去重优化 |
 | — | shared-infrastructure.md | 共享机制（跨阶段引用，不单独运行） |
 
@@ -79,6 +80,14 @@
 1. 重新读取 `{projectPath}/00-人物档案.json` 与 `{projectPath}/01-大纲.json`（以用户最新修改为准）
 2. 若**尚无任何章节写成**（`status == "planning"` 或所有章节 `status == "pending"`）→ 依据**修改后的** `01-大纲.json` 重新生成 `02-写作计划.json`（章节标题、数量以最新大纲为准），保留 `projectPath`、`novelName` 等元信息
 3. 若**已有部分章节写成**（`in_progress`/`validating` 或存在 `completed` 章节）→ 保留 `02-写作计划.json`，但后续未写章节严格按修改后的大纲与人物设定继续
-4. 进入写作模式选择（第2.5步）→ 随后进入第三阶段继续创作
+4. **（Timing 1 冲突优化选项）** 在正式进入写作前，使用 AskUserQuestion 询问用户是否先运行冲突优化：
+
+   Question：你修改了大纲 / 人物设定，是否先检测并修复其中可能遗漏的冲突（人设与大纲不一致、章间设定矛盾、已写章节与新设定不符）？
+   [A] 运行冲突优化（推荐）→ 运行 [phase10-man-conflict-resolution.md](phase10-man-conflict-resolution.md)（Timing 1 模式：以你修改后的设定为权威，检测设定内部一致性 + 已写章节与新设定的一致性，修复后再继续写作）
+   [B] 不用，直接继续写作 → 跳过冲突优化，进入下一步
+
+   - 若用户选择 **[A]**：先执行第 10 阶段（用户主动修改过的设定即视为权威方，详见 phase10 权威方判定规则），完成后再进入写作模式选择
+   - 若用户选择 **[B]**：直接进入写作模式选择
+5. 进入写作模式选择（第2.5步）→ 随后进入第三阶段继续创作
 
 > 注意：若用户提示词既含继续字样、又存在 `in_progress` 未完成项目，优先按本步 [A] 处理（重新读取修改后的文件再续写），不执行第 4 步的自动续写。

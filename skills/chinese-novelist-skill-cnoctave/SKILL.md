@@ -22,7 +22,7 @@ license: MIT
 - **中断续写**：自动检测未完成项目，从断点继续创作
 - **大纲可编辑后继续**：写完大纲与人物设定后可暂停，输出文件路径供用户修改；后续对话输入「继续写作」等字样即按修改后的设定续写
 - **自动校验**：创作完成后自动检查字数和质量，不合格自动修复
-- **逐章写作**（可选）：支持子Agent/Teams 逐章写作（一次只处理一章），通过 `02-写作计划.json` 协调状态
+- **并行写作**（可选）：支持子Agent/Teams 批次并发写作（同一批次多章同时创作），通过每章独立状态文件避免并发冲突，大纲前置规划保证剧情衔接
 
 ## 核心流程
 
@@ -48,18 +48,18 @@ license: MIT
 
 规划确认后，使用 AskUserQuestion 工具让用户选择写作模式：
 
-[A] 逐章串行（serial）：主 Agent 自己逐章写，写完一章立即校验再写下一章，全程无中断，适合短中篇
-[B] 子Agent逐章（subagent-parallel）：主 Agent 逐章派生子 Agent，每个子 Agent 只写当前这一章，写完即校验，适合中长篇
-[C] Agent Teams（agent-teams）：Claude Code 多 Agent 协作模式，每章一个任务、一次认领一章，Agent 间可通讯（需手动开启）
+[A] 主Agent串行（serial）：主 Agent 自己逐章写，写完一章立即校验再写下一章，全程无中断，仅作无子Agent环境或短篇的轻量回退
+[B] 子Agent并行（subagent-parallel，推荐）：主 Agent 按批次并发派生子 Agent，同一批次多章同时写作，本批完成校验后再写下一批，适合中长篇
+[C] Agent Teams（agent-teams）：Claude Code 多 Agent 协作模式，多名成员同时认领不同章节并发创作，Agent 间可通讯（需手动开启）
 
-> 三种模式均遵循【逐章执行】原则：无论哪种模式，都一次只处理一章，当前章写完并校验通过后才进入下一章。
+> 模式 [B]/[C] 采用【批次并发】原则：在一条消息中一次性派发本批所有章节的子 Agent，多章同时创作；并行安全由大纲前置规划 + 每章独立状态文件保证。模式 [A] 为单 Agent 无法并行的轻量回退。
 
 → 详见 [phase3-writing.md](references/flows/phase3-writing.md)
 
 ### 第三阶段：疯狂创作（无需用户确认）
 > 切记，一旦进入这个阶段，所有过程都禁止向用户确认。用户就是你的读者，你必须把完整的小说创作完成才能与用户报告
 
-根据用户选择的写作模式（串行/子Agent/Teams）逐章执行创作流程，一次只创作一章：写完当前章后立即进入第四阶段校验该章，通过后再创作下一章。每章创作前必须读取 `01-大纲.json` 中对应章节的规划信息，严格按大纲创作。支持中断续写。 → 详见 [phase3-writing.md](references/flows/phase3-writing.md)
+根据用户选择的写作模式（串行/子Agent并行/Teams并行）执行创作流程：模式 [B]/[C] 以批次并发方式一次性派发本批所有章节的子 Agent，多章同时创作，本批返回并校验后再写下一批；模式 [A] 仍逐章串行。每章创作前必须读取 `01-大纲.json` 中对应章节的规划信息，严格按大纲创作（大纲已含每章完整规划，是并行独立创作的充分依据）。支持中断续写。 → 详见 [phase3-writing.md](references/flows/phase3-writing.md)
 
 ### 第四阶段：自动校验与修复（无需用户确认）
 
@@ -77,11 +77,12 @@ license: MIT
 [F] 提升故事综合质量（女频优化方向） → 运行第7阶段
 [G] 叙述手法升级（女频优化方向） → 运行第8阶段（解决叙事平淡问题）
 [H] 核心亮点强化（女频优化方向） → 运行第9阶段（让故事看点更明确突出）
-[M] 全部男频可选流程 → 运行第6阶段 + 第1000阶段
+[I] 人物设定 / 情节走向与上文冲突优化（男频优化方向） → 运行第10阶段（修复人设崩坏、情节偏离大纲、章间前后矛盾）
+[M] 全部男频可选流程 → 运行第6阶段 + 第7阶段 + 第1000阶段 + 第10阶段
 [W] 全部女频可选流程 → 运行第5阶段 + 第7阶段 + 第8阶段 + 第9阶段 + 第1000阶段
 [FM] 女频全面增强 → 运行第5阶段 + 第7阶段 + 第8阶段 + 第9阶段（故事矛盾+综合质量+叙述手法+核心亮点）
 
-→ 根据用户选择进入 [phase5-woman-gushimaodun.md](references/flows/phase5-woman-gushimaodun.md) 和/或 [phase6-man-gushidairugan.md](references/flows/phase6-man-gushidairugan.md) 和/或 [phase1000-remove-duplicates.md](references/flows/phase1000-remove-duplicates.md) 和/或 [phase7-improve-the-overall-quality-of-the-story.md](references/flows/phase7-improve-the-overall-quality-of-the-story.md) 和/或 [phase8-improve-narrative-tension.md](references/flows/phase8-improve-narrative-tension.md) 和/或 [phase9-highlight-core-appeal.md](references/flows/phase9-highlight-core-appeal.md)
+→ 根据用户选择进入 [phase5-woman-gushimaodun.md](references/flows/phase5-woman-gushimaodun.md) 和/或 [phase6-man-gushidairugan.md](references/flows/phase6-man-gushidairugan.md) 和/或 [phase1000-remove-duplicates.md](references/flows/phase1000-remove-duplicates.md) 和/或 [phase7-improve-the-overall-quality-of-the-story.md](references/flows/phase7-improve-the-overall-quality-of-the-story.md) 和/或 [phase8-improve-narrative-tension.md](references/flows/phase8-improve-narrative-tension.md) 和/或 [phase9-highlight-core-appeal.md](references/flows/phase9-highlight-core-appeal.md) 和/或 [phase10-man-conflict-resolution.md](references/flows/phase10-man-conflict-resolution.md)
 
 ## 共享机制
 

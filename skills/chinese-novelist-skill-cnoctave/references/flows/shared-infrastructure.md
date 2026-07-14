@@ -92,7 +92,7 @@
 - **写作模式**：记录用户选择的写作模式（serial/subagent-parallel/agent-teams）
 - **中断续写**：Phase 0 读取 JSON 检测未完成项目，支持从断点继续
 - **校验依据**：Phase 4 基于 JSON 校验章节完成度和字数
-- **并行协调**（可选）：多 Agent 并行写作时通过 JSON 状态避免冲突
+- **并行协调**：多 Agent 并行写作时，各章通过【独立状态文件】隔离写入，主 Agent 在批末统一合并到本 JSON，避免并发写冲突（见下方「并行协调与独立状态文件」）
 
 ### 与大纲的关系
 
@@ -105,6 +105,28 @@
 
 - JSON 解析失败时：提示用户，尝试从大纲的章节摘要区推断完成进度
 - 章节状态丢失时：通过文件存在性和字数脚本重建状态
+
+### 并行协调与独立状态文件
+
+并行模式（[B] 子Agent并行 / [C] Agent Teams 并行）下，多个章节同时写作。为避免多个 Agent 并发写同一份共享 JSON 导致损坏，采用「每章独立状态文件 + 批末合并」机制：
+
+- **独立状态文件路径**：`{projectPath}/状态/第{XX}章-state.json`
+- **结构**：
+  ```json
+  {
+    "chapterNumber": 1,
+    "title": "章节标题",
+    "filePath": "第01章-章节标题.md",
+    "status": "completed",
+    "wordCount": 3570,
+    "wordCountPass": true,
+    "summary": "300-500字摘要……",
+    "retryCount": 0
+  }
+  ```
+- **并行期间**：每个子 Agent 只写自己的章节文件与自己的 `状态/第XX章-state.json`，**绝不修改** `02-写作计划.json` / `01-大纲.json`。
+- **批末合并**：主 Agent 读取本批所有独立状态文件，将 `status`/`wordCount`/`wordCountPass` 合并回 `02-写作计划.json`，并将 `summary` 合并回 `01-大纲.json` 对应章节。
+- **重试**：缺失状态文件或子 Agent 报错的章标记 `failed`，进入下一批重试（每章最多 3 轮）。
 
 ---
 
@@ -127,7 +149,7 @@ python scripts/check_chapter_wordcount.py ./chinese-novelist/项目文件夹/第
 
 | 阶段 | 用途 |
 |------|------|
-| Phase 3（逐章创作） | 撰写后检查单章字数，低于2000字必须扩充 |
-| Phase 4（自动校验） | 逐章检查每章字数，不合格章节当场重写修复（最多3轮） |
+| Phase 3（并行/串行创作） | 子 Agent 撰写后检查单章字数，低于2000字必须扩充 |
+| Phase 4（自动校验） | 串行逐章 / 并行批量检查每章字数，不合格章节当场重写修复（最多3轮） |
 
 低于2000字的章节必须使用 [content-expansion.md](../guides/content-expansion.md) 的扩充技巧进行扩充。
