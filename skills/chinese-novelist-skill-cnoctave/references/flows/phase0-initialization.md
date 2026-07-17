@@ -17,7 +17,7 @@
 | Phase 4 | phase4-validation.md | 自动校验与修复 |
 | Phase 5★ | phase5-woman-gushimaodun.md | （可选）故事矛盾增强（多用于女频） |
 | Phase 6★ | phase6-man-gushidairugan.md | （可选）故事代入感增强（多用于男频） |
-| Phase 10★ | phase10-man-conflict-resolution.md | （可选）人物设定/情节走向与上文冲突优化（多用于男频） |
+| Phase 10★ | phase10-conflict-resolution.md | （可选）人物设定/情节走向与上文冲突优化（男频/女频通用） |
 | Phase 1000★ | phase1000-remove-duplicates.md | （可选）AI 查重与去重优化 |
 | — | shared-infrastructure.md | 共享机制（跨阶段引用，不单独运行） |
 
@@ -83,7 +83,7 @@
 4. **（Timing 1 冲突优化选项）** 在正式进入写作前，使用 AskUserQuestion 询问用户是否先运行冲突优化：
 
    Question：你修改了大纲 / 人物设定，是否先检测并修复其中可能遗漏的冲突（人设与大纲不一致、章间设定矛盾、已写章节与新设定不符）？
-   [A] 运行冲突优化（推荐）→ 运行 [phase10-man-conflict-resolution.md](phase10-man-conflict-resolution.md)（Timing 1 模式：以你修改后的设定为权威，检测设定内部一致性 + 已写章节与新设定的一致性，修复后再继续写作）
+   [A] 运行冲突优化（推荐）→ 运行 [phase10-conflict-resolution.md](phase10-conflict-resolution.md)（Timing 1 模式：以你修改后的设定为权威，检测设定内部一致性 + 已写章节与新设定的一致性，修复后再继续写作）
    [B] 不用，直接继续写作 → 跳过冲突优化，进入下一步
 
    - 若用户选择 **[A]**：先执行第 10 阶段（用户主动修改过的设定即视为权威方，详见 phase10 权威方判定规则），完成后再进入写作模式选择

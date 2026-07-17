@@ -149,7 +149,7 @@ python scripts/check_chapter_wordcount.py ./chinese-novelist/项目文件夹/第
 
 | 阶段 | 用途 |
 |------|------|
-| Phase 3（并行/串行创作） | 子 Agent 撰写后检查单章字数，低于2000字必须扩充 |
+| Phase 3（并行/串行创作） | 子 Agent 撰写后检查单章总字数，目标 = 场景数 × 1000（每个场景至少 1000 字），不达标必须扩充 |
 | Phase 4（自动校验） | 串行逐章 / 并行批量检查每章字数，不合格章节当场重写修复（最多3轮） |
 
-低于2000字的章节必须使用 [content-expansion.md](../guides/content-expansion.md) 的扩充技巧进行扩充。
+本章总字数低于（场景数 × 1000）、或任一场景不足 1000 字的章节，必须使用 [content-expansion.md](../guides/content-expansion.md) 的扩充技巧进行扩充。

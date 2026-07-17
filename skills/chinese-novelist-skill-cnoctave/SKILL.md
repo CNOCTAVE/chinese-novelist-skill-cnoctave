@@ -1,7 +1,7 @@
 ---
 name: chinese-novelist-skill-cnoctave
 description: |
-  分章节创作引人入胜的中文小说。支持各种题材（悬疑/言情/奇幻/科幻/历史等），支持10-50章长篇创作，每章3000-5000字，结尾设置悬念钩子。强调深度润色去除AI痕迹，确保文字自然流畅。
+  分章节创作引人入胜的中文小说。支持各种题材（悬疑/言情/奇幻/科幻/历史等），支持10-50章长篇创作，大纲每个场景至少写1000字（每章目标字数 = 场景数 × 1000），结尾设置悬念钩子。强调深度润色去除AI痕迹，确保文字自然流畅。
   当用户要求：写小说、创作故事、分章节写作、连续剧情、章节悬念、长篇小说时使用。
 metadata:
   trigger: 创作中文小说、分章节故事、长篇小说创作
@@ -77,12 +77,12 @@ license: MIT
 [F] 提升故事综合质量（女频优化方向） → 运行第7阶段
 [G] 叙述手法升级（女频优化方向） → 运行第8阶段（解决叙事平淡问题）
 [H] 核心亮点强化（女频优化方向） → 运行第9阶段（让故事看点更明确突出）
-[I] 人物设定 / 情节走向与上文冲突优化（男频优化方向） → 运行第10阶段（修复人设崩坏、情节偏离大纲、章间前后矛盾）
+[I] 人物设定 / 情节走向与上文冲突优化（男频/女频通用） → 运行第10阶段（修复人设崩坏、情节偏离大纲、章间前后矛盾）
 [M] 全部男频可选流程 → 运行第6阶段 + 第7阶段 + 第1000阶段 + 第10阶段
-[W] 全部女频可选流程 → 运行第5阶段 + 第7阶段 + 第8阶段 + 第9阶段 + 第1000阶段
+[W] 全部女频可选流程 → 运行第5阶段 + 第7阶段 + 第8阶段 + 第9阶段 + 第1000阶段 + 第10阶段
 [FM] 女频全面增强 → 运行第5阶段 + 第7阶段 + 第8阶段 + 第9阶段（故事矛盾+综合质量+叙述手法+核心亮点）
 
-→ 根据用户选择进入 [phase5-woman-gushimaodun.md](references/flows/phase5-woman-gushimaodun.md) 和/或 [phase6-man-gushidairugan.md](references/flows/phase6-man-gushidairugan.md) 和/或 [phase1000-remove-duplicates.md](references/flows/phase1000-remove-duplicates.md) 和/或 [phase7-improve-the-overall-quality-of-the-story.md](references/flows/phase7-improve-the-overall-quality-of-the-story.md) 和/或 [phase8-improve-narrative-tension.md](references/flows/phase8-improve-narrative-tension.md) 和/或 [phase9-highlight-core-appeal.md](references/flows/phase9-highlight-core-appeal.md) 和/或 [phase10-man-conflict-resolution.md](references/flows/phase10-man-conflict-resolution.md)
+→ 根据用户选择进入 [phase5-woman-gushimaodun.md](references/flows/phase5-woman-gushimaodun.md) 和/或 [phase6-man-gushidairugan.md](references/flows/phase6-man-gushidairugan.md) 和/或 [phase1000-remove-duplicates.md](references/flows/phase1000-remove-duplicates.md) 和/或 [phase7-improve-the-overall-quality-of-the-story.md](references/flows/phase7-improve-the-overall-quality-of-the-story.md) 和/或 [phase8-improve-narrative-tension.md](references/flows/phase8-improve-narrative-tension.md) 和/或 [phase9-highlight-core-appeal.md](references/flows/phase9-highlight-core-appeal.md) 和/或 [phase10-conflict-resolution.md](references/flows/phase10-conflict-resolution.md)
 
 ## 共享机制
 

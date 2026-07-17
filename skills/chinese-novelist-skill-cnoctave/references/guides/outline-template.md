@@ -69,5 +69,6 @@ Phase 2 创建 `01-大纲.json`，使用以下 JSON 结构。
 - **Phase 3**：每章创作前读取此文件，找到当前章节的规划信息
 - **Phase 3 收尾**：在对应章节的 `summary` 字段追加 300-500 字摘要
 - **修改**：直接编辑 JSON 文件，增删章节或修改规划
+- **字数目标**：每章目标字数 = 本章 `scenes` 场景数量 × 1000（即大纲中**每个场景至少写 1000 字**），`targetWordsPerChapter` 仅作整体估算参考
 
 详见 [plot-structures.md](plot-structures.md) 获取情节结构技法。
