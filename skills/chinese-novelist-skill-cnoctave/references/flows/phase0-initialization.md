@@ -17,7 +17,11 @@
 | Phase 4 | phase4-validation.md | 自动校验与修复 |
 | Phase 5★ | phase5-woman-gushimaodun.md | （可选）故事矛盾增强（多用于女频） |
 | Phase 6★ | phase6-man-gushidairugan.md | （可选）故事代入感增强（多用于男频） |
+| Phase 7★ | phase7-improve-the-overall-quality-of-the-story.md | （可选）故事综合质量提升（多用于女频） |
+| Phase 8★ | phase8-improve-narrative-tension.md | （可选）叙述手法升级·解决叙事平淡（多用于女频） |
+| Phase 9★ | phase9-highlight-core-appeal.md | （可选）核心亮点强化（多用于女频） |
 | Phase 10★ | phase10-conflict-resolution.md | （可选）人物设定/情节走向与上文冲突优化（男频/女频通用） |
+| Phase 11★ | phase11-fix-chapter-incoherence.md | （可选）章节内容连贯性修复·解决"内容不连贯、读着跳"（多用于女频） |
 | Phase 1000★ | phase1000-remove-duplicates.md | （可选）AI 查重与去重优化 |
 | — | shared-infrastructure.md | 共享机制（跨阶段引用，不单独运行） |
 
