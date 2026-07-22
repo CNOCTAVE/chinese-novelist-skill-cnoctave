@@ -79,11 +79,12 @@ license: MIT
 [H] 核心亮点强化（女频优化方向） → 运行第9阶段（让故事看点更明确突出）
 [I] 人物设定 / 情节走向与上文冲突优化（男频/女频通用） → 运行第10阶段（修复人设崩坏、情节偏离大纲、章间前后矛盾）
 [J] 章节内容连贯性修复（女频优化方向） → 运行第11阶段（修复情感跳跃、关系进展突兀、情节线索断档、时空场景硬切、视角人称乱跳、行为动机缺失，解决"内容不连贯、读着跳"的问题）
-[M] 全部男频可选流程 → 运行第6阶段 + 第7阶段 + 第1000阶段 + 第10阶段
-[W] 全部女频可选流程 → 运行第5阶段 + 第7阶段 + 第8阶段 + 第9阶段 + 第1000阶段 + 第10阶段 + 第11阶段
+[K] 细节刻画增强（男频/女频通用） → 运行第12阶段（通过增强感官描写、具象化、动作分解、环境刻画、对话细节、心理描写，解决"描写空洞、缺乏画面感"的问题）
+[M] 全部男频可选流程 → 运行第6阶段 + 第7阶段 + 第1000阶段 + 第10阶段 + 第12阶段
+[W] 全部女频可选流程 → 运行第5阶段 + 第7阶段 + 第8阶段 + 第9阶段 + 第1000阶段 + 第10阶段 + 第11阶段 + 第12阶段
 [FM] 女频全面增强 → 运行第5阶段 + 第7阶段 + 第8阶段 + 第9阶段（故事矛盾+综合质量+叙述手法+核心亮点）
 
-→ 根据用户选择进入 [phase5-woman-gushimaodun.md](references/flows/phase5-woman-gushimaodun.md) 和/或 [phase6-man-gushidairugan.md](references/flows/phase6-man-gushidairugan.md) 和/或 [phase1000-remove-duplicates.md](references/flows/phase1000-remove-duplicates.md) 和/或 [phase7-improve-the-overall-quality-of-the-story.md](references/flows/phase7-improve-the-overall-quality-of-the-story.md) 和/或 [phase8-improve-narrative-tension.md](references/flows/phase8-improve-narrative-tension.md) 和/或 [phase9-highlight-core-appeal.md](references/flows/phase9-highlight-core-appeal.md) 和/或 [phase10-conflict-resolution.md](references/flows/phase10-conflict-resolution.md) 和/或 [phase11-fix-chapter-incoherence.md](references/flows/phase11-fix-chapter-incoherence.md)
+→ 根据用户选择进入 [phase5-woman-gushimaodun.md](references/flows/phase5-woman-gushimaodun.md) 和/或 [phase6-man-gushidairugan.md](references/flows/phase6-man-gushidairugan.md) 和/或 [phase1000-remove-duplicates.md](references/flows/phase1000-remove-duplicates.md) 和/或 [phase7-improve-the-overall-quality-of-the-story.md](references/flows/phase7-improve-the-overall-quality-of-the-story.md) 和/或 [phase8-improve-narrative-tension.md](references/flows/phase8-improve-narrative-tension.md) 和/或 [phase9-highlight-core-appeal.md](references/flows/phase9-highlight-core-appeal.md) 和/或 [phase10-conflict-resolution.md](references/flows/phase10-conflict-resolution.md) 和/或 [phase11-fix-chapter-incoherence.md](references/flows/phase11-fix-chapter-incoherence.md) 和/或 [phase12-enhance-detail-depiction.md](references/flows/phase12-enhance-detail-depiction.md)
 
 ## 共享机制
 
