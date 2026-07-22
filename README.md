@@ -1,6 +1,14 @@
 <div>原skill长期无人修复issue，Octave中文网凭借实际的AI网文写作经验不断完善此skill，更有配套ai写作课程销售，帮助开发者们在做中学</div>
 <h4>配套ai写作课程：</h4>
 <ol>
+<h5>于红博AI写作教程（女频现代言情文）：</h5>
+<li>天玑智研：
+https://phadscholar.com/course/details/2078191621060583426</li>
+<li>哔哩哔哩：
+https://www.bilibili.com/cheese/play/ep2722321</li>
+<li>网易云课堂：
+https://study.163.com/course/courseMain.htm?share=2&shareId=480000012328416&courseId=1223997808</li>
+</ol>
 <h5>于红博AI写作教程（男频都市文）：</h5>
 <li>天玑智研：
 https://phadscholar.com/course/details/2075931029017464834</li>
