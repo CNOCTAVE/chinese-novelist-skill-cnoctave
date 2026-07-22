@@ -2,7 +2,6 @@
 <h4>配套ai写作课程：</h4>
 <ol>
 <h5>于红博AI写作教程（女频现代言情文）：</h5>
-<ol>
 <li>天玑智研：
 https://phadscholar.com/course/details/2078191621060583426</li>
 <li>哔哩哔哩：
