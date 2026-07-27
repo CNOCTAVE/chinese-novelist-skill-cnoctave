@@ -54,7 +54,7 @@
 
 ## 4. 中断续写检测
 
-扫描 `./chinese-novelist/` 目录下的项目文件夹：
+扫描 `{CWD}/chinese-novelist/` 目录下的项目文件夹：
 
 - 查找含 `02-写作计划.json` 且 `status` 为 `"in_progress"` 或 `"validating"` 的项目
 - 如果找到未完成项目：
@@ -71,7 +71,7 @@
 检测逻辑：
 
 - 分析用户本次输入的提示词，若含上述**继续创作类字样**：
-  - 扫描 `./chinese-novelist/` 目录，查找含 `01-大纲.json` **和** `00-人物档案.json` 的项目文件夹（不限 `status`）
+  - 扫描 `{CWD}/chinese-novelist/` 目录，查找含 `01-大纲.json` **和** `00-人物档案.json` 的项目文件夹（不限 `status`）
   - 若找到：
     - 展示项目信息：小说名称、`status`、已完成章数（X/Y）
     - 使用 AskUserQuestion 提供选项：

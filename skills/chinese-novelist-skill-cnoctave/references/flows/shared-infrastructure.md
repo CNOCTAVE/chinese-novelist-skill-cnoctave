@@ -136,13 +136,13 @@
 
 ```bash
 # 检查单个章节
-python scripts/check_chapter_wordcount.py ./chinese-novelist/项目文件夹/第01章.md
+python scripts/check_chapter_wordcount.py {CWD}/chinese-novelist/项目文件夹/第01章.md
 
 # 检查所有章节
-python scripts/check_chapter_wordcount.py --all ./chinese-novelist/项目文件夹/
+python scripts/check_chapter_wordcount.py --all {CWD}/chinese-novelist/项目文件夹/
 
 # 自定义最小字数
-python scripts/check_chapter_wordcount.py ./chinese-novelist/项目文件夹/第01章.md 3500
+python scripts/check_chapter_wordcount.py {CWD}/chinese-novelist/项目文件夹/第01章.md 3500
 ```
 
 ### 使用场景

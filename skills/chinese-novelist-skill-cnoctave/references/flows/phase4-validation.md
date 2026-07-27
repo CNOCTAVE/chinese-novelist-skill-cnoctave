@@ -76,7 +76,7 @@ Phase 3 每批子 Agent 返回后，主 Agent 已将该批各章独立状态文�
 ✅ 第2章：[标题]（[字数]字）
 ...
 
-项目文件夹：./chinese-novelist/[timestamp]-[小说名称]/
+项目文件夹：{CWD}/chinese-novelist/[timestamp]-[小说名称]/
 ```
 
 如有不合格章节（超过3次重写仍未通过），在报告中标注：

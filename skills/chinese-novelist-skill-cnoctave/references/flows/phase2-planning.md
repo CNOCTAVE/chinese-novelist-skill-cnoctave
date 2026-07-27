@@ -4,7 +4,7 @@
 
 执行以下步骤：
 
-1. **创建项目文件夹**：`./chinese-novelist/{YYYYMMDD-HHmmss}-{Layer 3 确认的标题}/`（相对当前工作目录，使用用户在 Layer 3 选定的小说标题）
+1. **创建项目文件夹**：`{CWD}/chinese-novelist/{YYYYMMDD-HHmmss}-{Layer 3 确认的标题}/`（`{CWD}` = 用户启动会话时的工作目录，使用用户在 Layer 3 选定的小说标题）
 2. **生成人物档案**：创建 `00-人物档案.json`，使用 [character-template.md](../guides/character-template.md) 模板的 JSON 结构，参考 [character-building.md](../guides/character-building.md) 创建主角、反派、配角档案。**人物档案必须详细**：每个角色的性格核心、致命缺陷、说话风格/口头禅、恐惧/弱项、背景故事都要具体到可以直接指导写作的程度
 3. **生成大纲**：创建 `01-大纲.json`，使用 [outline-template.md](../guides/outline-template.md) 模板的 JSON 结构，参考 [plot-structures.md](../guides/plot-structures.md) 填入完整的章节规划。**大纲必须以人物驱动情节** 参照 `00-人物档案.json`，确保情节服务于人物成长弧线。大纲中的keyEvents字段必须编写至少10个关键词，其中必须至少包含7个名词
 4. **生成写作计划**：创建 `02-写作计划.json`，基于大纲内容填充，结构如下：
@@ -12,7 +12,7 @@
    {
      "version": 1,
      "novelName": "[小说名称]",
-     "projectPath": "./chinese-novelist/{timestamp}-[小说名称]",
+      "projectPath": "{CWD}/chinese-novelist/{timestamp}-[小说名称]",
      "totalChapters": [章节数],
      "minWordsPerChapter": 2000,
      "createdAt": "[ISO时间]",

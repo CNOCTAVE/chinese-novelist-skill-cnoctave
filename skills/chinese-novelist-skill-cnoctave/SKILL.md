@@ -11,6 +11,8 @@ license: MIT
 
 # chinese-novelist-skill-cnoctave: 中文小说创作助手
 
+> **路径约定**：本文档中所有 `{CWD}/chinese-novelist/` 开头的路径均指**用户工作目录**下的 `chinese-novelist/` 文件夹。`{CWD}` 即用户启动写作会话时的当前目录（非 skill 所在目录），所有生成的文件/目录都应创建在此路径下。
+
 ## 三大黄金法则
 
 1. **展示而非讲述** - 用动作和对话表现，不要直接陈述
@@ -42,7 +44,7 @@ license: MIT
 
 ### 第二阶段：规划 + 二次确认
 
-创建项目文件夹（`./chinese-novelist/{timestamp}-{小说名称}/`），生成大纲、人物档案和写作计划JSON，等待用户确认。确认后用户可选择**立即开始写作**或**暂停并修改**：选择暂停时，skill 输出人物设定文件（`00-人物档案.json`）与大纲文件（`01-大纲.json`）的完整路径并停止，供用户修改。 → 详见 [phase2-planning.md](references/flows/phase2-planning.md)
+创建项目文件夹（`{CWD}/chinese-novelist/{timestamp}-{小说名称}/`），生成大纲、人物档案和写作计划JSON，等待用户确认。确认后用户可选择**立即开始写作**或**暂停并修改**：选择暂停时，skill 输出人物设定文件（`00-人物档案.json`）与大纲文件（`01-大纲.json`）的完整路径并停止，供用户修改。 → 详见 [phase2-planning.md](references/flows/phase2-planning.md)
 
 ### 第2.5步：写作模式选择
 
