@@ -23,6 +23,7 @@
 | Phase 10★ | phase10-conflict-resolution.md | （可选）人物设定/情节走向与上文冲突优化（男频/女频通用） |
 | Phase 11★ | phase11-fix-chapter-incoherence.md | （可选）章节内容连贯性修复·解决"内容不连贯、读着跳"（多用于女频） |
 | Phase 1000★ | phase1000-remove-duplicates.md | （可选）AI 查重与去重优化 |
+| Phase 1001★ | phase1001-remove-redundant-rhetoric.md | （可选）修辞手法去重优化·白描风格 |
 | — | shared-infrastructure.md | 共享机制（跨阶段引用，不单独运行） |
 
 > 标记 ★ 的为可选阶段，在创作完成后通过 AskUserQuestion 选择是否运行。
