@@ -65,9 +65,11 @@ license: MIT
 
 ### 第四阶段：自动校验与修复（无需用户确认）
 
-全程无需用户介入，逐章校验每一章的字数与完成度，不合格章节当场重写修复（最多3轮）。 → 详见 [phase4-validation.md](references/flows/phase4-validation.md)
+全程无需用户介入，逐章校验每一章的字数与完成度，不合格章节当场重写修复（最多3轮）。**校验通过、展示完成报告后，必须进入第4.5步（可选增强阶段）询问用户，不得直接结束。** → 详见 [phase4-validation.md](references/flows/phase4-validation.md)
 
-### 第4.5步：可选增强阶段
+### 第4.5步：可选增强阶段（必经步骤，不得跳过）
+
+> **重要**：本步骤是必经步骤，**不是可选项**。第4阶段校验完成并展示完成报告后，**必须**使用 AskUserQuestion 工具询问用户是否运行可选增强阶段；只有在用户明确选择 [D]「都不需要，直接结束」后才能结束流程。
 
 校验通过后，使用 AskUserQuestion 工具让用户选择是否运行可选增强阶段：
 
@@ -86,6 +88,8 @@ license: MIT
 [M] 全部男频可选流程 → 运行第6阶段 + 第7阶段 + 第1000阶段 + 第10阶段 + 第12阶段 + 第1001阶段
 [W] 全部女频可选流程 → 运行第5阶段 + 第7阶段 + 第8阶段 + 第9阶段 + 第1000阶段 + 第10阶段 + 第11阶段 + 第12阶段 + 第1001阶段
 [FM] 女频全面增强 → 运行第5阶段 + 第7阶段 + 第8阶段 + 第9阶段（故事矛盾+综合质量+叙述手法+核心亮点）
+
+> **手动触发**：若用户此前选择了 [D] 直接结束，或本阶段因故未触发，用户随时可输入「进行优化」「可选增强」「继续优化」「增强小说」等字样，由 Phase 0 第6节检测并重新进入本步骤（详见 [phase0-initialization.md](references/flows/phase0-initialization.md) 第6节）。
 
 → 根据用户选择进入 [phase5-woman-gushimaodun.md](references/flows/phase5-woman-gushimaodun.md) 和/或 [phase6-man-gushidairugan.md](references/flows/phase6-man-gushidairugan.md) 和/或 [phase1000-remove-duplicates.md](references/flows/phase1000-remove-duplicates.md) 和/或 [phase7-improve-the-overall-quality-of-the-story.md](references/flows/phase7-improve-the-overall-quality-of-the-story.md) 和/或 [phase8-improve-narrative-tension.md](references/flows/phase8-improve-narrative-tension.md) 和/或 [phase9-highlight-core-appeal.md](references/flows/phase9-highlight-core-appeal.md) 和/或 [phase10-conflict-resolution.md](references/flows/phase10-conflict-resolution.md) 和/或 [phase11-fix-chapter-incoherence.md](references/flows/phase11-fix-chapter-incoherence.md) 和/或 [phase12-enhance-detail-depiction.md](references/flows/phase12-enhance-detail-depiction.md) 和/或 [phase1001-remove-redundant-rhetoric.md](references/flows/phase1001-remove-redundant-rhetoric.md)
 
